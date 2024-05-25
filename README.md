@@ -26,6 +26,8 @@ Welcome to the Snake Game! Here's a guide to help you understand the rules and f
 5. **Game Over:** The game ends when the snake collides, and your final score is displayed.
 6. **Restart:** Press any key to play again after the game ends.
 
+deployed version : https://bhaskarneerati.github.io/snkae_game/
+
 Enjoy playing the Snake Game and have fun!
 
 *Note: This readme provides a general overview of the rules and features. Specific implementations may vary depending on the version of the game.*
