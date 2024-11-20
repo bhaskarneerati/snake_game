@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theranest</title>
+    <!-- Link to Gotham Rounded font -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/gotham-fonts@1.0.3/css/gotham-rounded.min.css">
+    <style>
+        /* Body styling */
+        body {
+            background: #fff;
+            color: #fff;
+            font-family: 'Open Sans', sans-serif;
+            /* Apply Gotham Rounded font to all text */
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #00f;
+            width: 100%;
+        }
+
+        /* Form styling */
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 271px;
+            height: 470px;
+            margin: 3px;
+            padding: 20px 26px;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 16px;
+            align-self: flex-start;
+        }
+
+        /* Form control styling */
+        .form-control {
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        /* Label styling */
+        .form-control label {
+            display: block;
+            margin-bottom: 12px;
+            color: #0B2451;
+            /* Set label color to #0B2451 */
+            font-weight: bold;
+            font-size: 17px;
+            line-height: 22px;
+        }
+
+        /* Input styling */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #000;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: calc(100% - 20px);
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #333;
+            font-size: 13px;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #166adf;
+            border: 0.0px solid #166adf;
+            border-radius: 14px;
+            font-family: inherit;
+            font-size: 14px;
+            display: block;
+            width: 40%;
+            margin-top: 19px;
+            margin-bottom: 20px;
+            color: #fff;
+            padding: 08px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #142651;
+        }
+
+        /* Submission message styling */
+        .submission-message {
+            color: black;
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Form -->
+    <form id="form">
+
+        <span class="required">*</span><label
+            style="font-size: 12px; font-family: inherit; color: #424242;">Name</label>
+        <!-- First Name -->
+        <div class="form-control" style="width: 48%;">
+            <input type="text" id="first-name" name="first-name"
+                style="width: 249px;height: 15px; border-radius: 8px; font-size: 13px;" />
+        </div>
+
+        <!-- Email -->
+        <span class="required">*</span><label
+            style="font-size: 12px; font-family: inherit; color: #424242;">Email</label>
+        <div class="form-control">
+            <input type="email" id="email" name="email":
+                style="width: 249px;height: 15px;border-radius: 8px;font-size: 13px;" />
+        </div>
+        <!-- Phone Number -->
+        <label style="font-size: 12px; font-family: inherit; color: #424242;">Phone number</label>
+        <div class="form-control">
+            <input type="tel" id="phone" name="phone"
+                style="width: 249px; height: 15px; border-radius: 8px; font-size: 13px;" />
+        </div>
+
+        <!-- Organization Name -->
+        <span class="required">*</span><label
+            style="font-size: 12px; font-family: inherit; color: #424242;">Organization Name</label>
+        <div class="form-control">
+            <input type="text" id="organization-name" name="organization-name";
+                style="width: 249px;height: 15px;border-radius: 8px;font-size: 13px;" />
+        </div>
+
+        <!-- Product -->
+        <span class="required">*</span><label
+            style="font-size: 12px; font-family: inherit; color: #424242;">Product</label>
+        <div class="form-control">
+            <select id="Product__c"
+                style="width: 270px;height: 37px;border-radius: 8px;font-size: 13px; border: 1px solid #5a5a5a; font-family: inherit; color: #2a2929;">
+                <option label="Default" value="Default" disabled selected hidden>Select an Option</option>
+                <option label="AccuPoint Legacy" value="AccuPoint Legacy">AccuPoint Legacy</option>
+                <option label="Apex" value="Apex">Apex</option>
+                <option label="Catalyst" value="Catalyst">Catalyst</option>
+                <option label="Clinician's Desktop" value="CDT">Clinician's Desktop</option>
+                <option label="EchoVantage" value="EchoVantage">EchoVantage</option>
+                <option label="Fusion" value="Fusion">Fusion</option>
+                <option label="Fusion Enterprise/A2C" value="Fusion Enterprise/A2C">Fusion Enterprise/A2C</option>
+                <option label="Insyst" value="Insyst">Insyst</option>
+                <option label="KASA" value="KASA">KASA</option>
+                <option label="Logik" value="Logik">Logik</option>
+                <option label="My Clients Plus" value="My_Clients_Plus">My Clients Plus</option>
+                <option label="MyClientsPlus 3.0/TheraNest Lite" value="TheraNest Lite">MyClientsPlus 3.0/TheraNest Lite
+                </option>
+                <option label="NewCrop" value="NewCrop">NewCrop</option>
+                <option label="Procentive" value="Procentive">Procentive</option>
+                <option label="RevMan" value="RevMan">RevMan</option>
+                <option label="ShareCare" value="ShareCare">ShareCare</option>
+                <option label="ShareNote" value="ShareNote">ShareNote</option>
+                <option label="TenEleven" value="TenEleven">TenEleven</option>
+                <option label="Thera-LINK" value="Thera-LINK">Thera-LINK</option>
+                <option label="TheraNest Professional" value="Theranest Professional">TheraNest Professional</option>
+                <option label="WebABA Enterprise/CodeMetro" value="WebABA Enterprise">WebABA Enterprise/CodeMetro
+                </option>
+                <option label="WebABA Pro &amp; Group" value="WebABA Pro &amp; Group">WebABA Pro &amp; Group</option>
+                <option label="WebABA Legacy" value="WebABA Legacy">WebABA Legacy</option>
+            </select>
+        </div>
+
+        <!-- Business Impact -->
+        <span class="required">*</span><label style="font-size: 12px; font-family: inherit; color: #424242;">Business
+            Impact</label>
+        <div class="form-control">
+            <select id="Product__B"
+                style="width: 270px;height: 37px;border-radius: 8px;font-size: 13px; border: 1px solid #5a5a5a; font-family: inherit; color: #2a2929;">
+                <option value="" disabled selected hidden>Select an Option</option>
+                <option label="I have a question about my product" value="question">I have a question about my product
+                </option>
+                <option label="There is an item causing some minor annoyances (everyone can still work)"
+                    value="everyonecanstillwork">There is an item causing some minor annoyances (everyone can still
+                    work)</option>
+                <option label="Part of the system is not functioning (some people cannot work)" value="cannot work">Part
+                    of the system is not functioning (some people cannot work)</option>
+                <option label="Entire system is down (no one can work)" value="noonecanwork">Entire system is down (no
+                    one can work)</option>
+            </select>
+        </div>
+
+        <!-- subject -->
+        <span class="required">*</span><label
+            style="font-size: 12px; font-family: inherit; color: #424242;">Subject</label>
+        <div class="form-control">
+            <input type="text" id="subject" name="subject"
+                style="width: 249px; height: 15px; border-radius: 8px; font-size: 13px;" />
+        </div>
+
+        <!-- Brief Description -->
+        <span class="required">*</span><label style="font-size: 12px; font-family: inherit; color: #424242;">Brief
+            Description</label>
+        <div class="form-control">
+            <input type="text" id="brief-description" name="brief-description"
+                style="width: 249px; height: 15px; border-radius: 8px; font-size: 13px;" />
+        </div>
+
+        <!-- Buttons -->
+        <div style="display: flex; justify-content: flex-end;">
+            <button type="button" id="submit-btn">Start Chatting</button>
+        </div>
+        <!-- Submission message -->
+        <div class="submission-message" style="display: none;"></div>
+    </form>
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#submit-btn").click(function () {
+                // Retrieve form data
+                var firstName = $("#first-name").val().trim();
+                var email = $("#email").val().trim();
+                var phone = $("#phone").val().trim();
+                var organizationName = $("#organization-name").val().trim();
+                var product = $("#Product__c").val()?.trim();
+                // console.log(product, 'product')
+                var businessImpact = $("#Product__B").val()?.trim();
+                var subject = $("#subject").val().trim();
+                var briefDescription = $("#brief-description").val().trim();
+
+                // Validate input fields
+                if (firstName === '' || email === '' || phone === '' || briefDescription === '' || product === '' || businessImpact === '' || subject === '' || organizationName === '') {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+                
+                // Validate first name format (simple validation)
+                var namePattern = /^[A-Za-z]{3,}(?:['\- ][A-Za-z]+)*$/;
+                if (!namePattern.test(firstName)) {
+                    alert('Please enter a valid first name.');
+                    return;
+                }
+
+                // Validate email format
+                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                // Validate phone number format (simple validation)
+                var phonePattern = /^(?!0{10})(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}$/;
+                if (!phonePattern.test(phone)) {
+                    alert('Please enter a valid phone number.');
+                    return;
+                }
+
+                // Send form data via postMessage
+                var targetOrigin = '*'; // Replace this with your target origin
+
+                window.parent.postMessage(JSON.stringify({
+                    event_code: 'ym-client-event',
+                    data: JSON.stringify({
+                        event: {
+                            code: "userdetails",
+                            data: {
+                                firstName: firstName,
+                                email: email,
+                                phone: phone,
+                                organizationName: organizationName,
+                                product: product,
+                                businessImpact: businessImpact,
+                                subject: subject,
+                                briefDescription: briefDescription
+                            }
+                        }
+                    })
+                }), targetOrigin);
+                // Hide cancel button
+                $("#cancel-btn").fadeOut("slow");
+                // Fade out the form and append thank you message
+                $("#submit-btn").fadeOut("slow", function () {
+                    $(".submission-message").fadeIn("slow");
+                });
+            });
+
+            // Cancel button click event
+            $("#cancel-btn").click(function () {
+                $("#form").html("<div class='submission-message'>Going Back!</div>");
+            });
+        });
+    </script>
+</body>
+
+</html>
