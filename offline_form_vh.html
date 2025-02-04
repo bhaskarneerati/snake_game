@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+
+      .form-container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+
+      .form-container label {
+        /* font-weight: bold; */
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form-container label.required:after {
+        content: " *";
+        color: red;
+      }
+
+      .form-container input,
+      .form-container select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .form-container button {
+        background-color: #4285f4;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .form-container button:hover {
+        background-color: #357ae8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <form id="form">
+        <label for="name" class="required">Submitter Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email" class="required">Submitter Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Submitter Phone</label>
+        <input type="tel" id="phone" name="phone" />
+
+        <label for="organization" class="required">Organization Name</label>
+        <input type="text" id="organization" name="organization" required />
+
+        <label for="product" class="required">Product</label>
+        <select id="product" name="product" required>
+          <option label="AccuPoint Legacy" value="AccuPoint Legacy">
+            AccuPoint Legacy
+          </option>
+          <option label="Apex" value="Apex">Apex</option>
+          <option label="Catalyst" value="Catalyst">Catalyst</option>
+          <option label="Clinician's Desktop" value="CDT">
+            Clinician's Desktop
+          </option>
+          <option label="EchoVantage" value="EchoVantage">EchoVantage</option>
+          <option label="Fusion" value="Fusion">Fusion</option>
+          <option label="Fusion Enterprise/A2C" value="Fusion Enterprise/A2C">
+            Fusion Enterprise/A2C
+          </option>
+          <option label="Insyst" value="Insyst">Insyst</option>
+          <option label="KASA" value="KASA">KASA</option>
+          <option label="Logik" value="Logik">Logik</option>
+          <option label="My Clients Plus" value="My_Clients_Plus">
+            My Clients Plus
+          </option>
+          <option
+            label="MyClientsPlus 3.0/TheraNest Lite"
+            value="TheraNest Lite"
+          >
+            MyClientsPlus 3.0/TheraNest Lite
+          </option>
+          <option label="NewCrop" value="NewCrop">NewCrop</option>
+          <option label="Procentive" value="Procentive">Procentive</option>
+          <option label="RevMan" value="RevMan">RevMan</option>
+          <option label="ShareCare" value="ShareCare">ShareCare</option>
+          <option label="ShareNote" value="ShareNote">ShareNote</option>
+          <option label="TenEleven" value="TenEleven">TenEleven</option>
+          <option label="Thera-LINK" value="Thera-LINK">Thera-LINK</option>
+          <option
+            label="TheraNest Professional"
+            value="TheraNest Professional"
+            selected
+          >
+            TheraNest Professional
+          </option>
+          <option label="WebABA Enterprise/CodeMetro" value="WebABA Enterprise">
+            WebABA Enterprise/CodeMetro
+          </option>
+          <option label="WebABA Pro &amp; Group" value="WebABA Pro &amp; Group">
+            WebABA Pro &amp; Group
+          </option>
+          <option label="WebABA Legacy" value="WebABA Legacy">
+            WebABA Legacy
+          </option>
+        </select>
+
+        <label for="business" class="required">Business Impact</label>
+        <select id="business" name="business" required>
+          <option
+            label="I have a question about my product"
+            value="I have a question about my product"
+          >
+            I have a question about my product
+          </option>
+          <option
+            label="There is an item causing some minor annoyances (everyone can still work)"
+            value="There is an item causing some minor annoyances (everyone can still work)"
+          >
+            There is an item causing some minor annoyances (everyone can still
+            work)
+          </option>
+          <option
+            label="Part of the system is not functioning (some people cannot work)"
+            value="Part of the system is not functioning (some people cannot work)"
+          >
+            Part of the system is not functioning (some people cannot work)
+          </option>
+          <option
+            label="Entire system is down (no one can work)"
+            value="Entire system is down (no one can work)"
+          >
+            Entire system is down (no one can work)
+          </option>
+        </select>
+
+        <label for="subject" class="required">Subject</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="description" class="required">Brief Description</label>
+        <input type="text" id="description" name="description" required />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script>
+      const form = document.getElementById("form");
+      const formFields = form.querySelectorAll("input, select, textarea");
+      const submitButton = document.querySelector("button[type='submit']");
+
+      const url = new URL(window.location.href);
+
+      const userName = url.searchParams.get("name");
+      const userEmail = url.searchParams.get("email");
+      const userPhone = url.searchParams.get("phone");
+      const product = url.searchParams.get("product");
+      // console.log(`${userEmail} ${userEmail} ${userPhone}`)
+
+      const nameField = document.getElementById("name");
+      const emailField = document.getElementById("email");
+      const phoneField = document.getElementById("phone");
+      const productField = document.getElementById("product");
+
+      if (userName) {
+        nameField.value = userName;
+        nameField.disabled = true;
+      }
+      if (userEmail) {
+        emailField.value = userEmail;
+        emailField.disabled = true;
+      }
+      if (userPhone) {
+        phoneField.value = userPhone;
+        phoneField.disabled = true;
+      }
+      if (product) {
+        productField.value = product;
+        productField.disabled = true;
+      }
+
+      document
+        .getElementById("form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevents form submission for demonstration
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const organization = document.getElementById("organization").value;
+          const product = document.getElementById("product").value;
+          const business = document.getElementById("business").value;
+          const subject = document.getElementById("subject").value;
+          const description = document.getElementById("description").value;
+
+          const data = {
+            name,
+            phone,
+            email,
+            organization,
+            product,
+            business,
+            subject,
+            description,
+          };
+          window.parent.postMessage(
+            JSON.stringify({
+              event_code: "ym-client-event",
+              data: JSON.stringify({
+                event: {
+                  code: "userdetails",
+                  data,
+                },
+              }),
+            }),
+            "*"
+          );
+          console.log("event submitted", data);
+
+          formFields.forEach((field) => {
+            field.disabled = true;
+          });
+          submitButton.disabled = true;
+          // alert(`${name} ${email} ${phone} ${organization} ${product} ${business} ${subject} ${description}`);
+        });
+    </script>
+  </body>
+</html>
